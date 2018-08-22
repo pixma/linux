@@ -78,7 +78,7 @@
 };
 
 &mmc0 {
-	pinctrl-0 = <&mmc0_pins_a>;
+	pinctrl-0 = <&mmc0_pins>;
 	pinctrl-names = "default";
 	broken-cd;
 	bus-width = <4>;
@@ -87,7 +87,7 @@
 };
 
 &uart0 {
-	pinctrl-0 = <&uart0_pins_a>;
+	pinctrl-0 = <&uart0_pins>;
 	pinctrl-names = "default";
 	status = "okay";
 };
@@ -101,3 +101,14 @@
 	usb0_id_det-gpio = <&pio 5 6 GPIO_ACTIVE_HIGH>;
 	status = "okay";
 };
+
+&pio {
+
+uart0_pins: uart0@0 {
+	 	pins = "PB8", "PB9";
+		function = "uart0";
+	};
+
+};
+
+
